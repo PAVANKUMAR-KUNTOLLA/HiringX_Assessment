@@ -1,53 +1,52 @@
 Project Setup:
 
 Frontend Setup:
+- Navigated to the 'frontend' directory.
+- Installed dependencies using 'npm install'.
+- Started the frontend server via 'npm run start'.
 
-The 'frontend' directory was navigated to.
-Dependencies were installed using 'npm install'.
-The frontend server was started via 'npm run start'.
 Backend Setup:
+- Navigated to the 'backend' directory.
+- Installed necessary packages with 'npm install'.
+- Launched the backend server with 'npm run start'.
 
-The 'backend' directory was navigated to.
-Necessary packages were installed with 'npm install'.
-The backend server was launched using 'npm run start'.
 Technology Stack Utilized:
+- Leveraged Node.js and npm.
+- Employed Express.js for API development.
+- Managed data with MongoDB.
+- Utilized the jsonwebtoken library for JWT management.
+- Constructed components and functionality with React.js.
 
-Node.js and npm were leveraged.
-Express.js was employed for API development.
-Data was managed with MongoDB.
-The jsonwebtoken library was utilized for JWT management.
-Components and functionality were constructed with React.js.
 Signup Screen Implementation:
+- Incorporated fields for email, password (with confirmation), and optional details such as name and profile picture.
+- Employed React's state management and validation libraries for field validation and email format verification.
+- Included a checkbox for accepting terms and conditions.
+- Provided clear error messages and success notifications.
+- Simulated sending a welcome email upon successful signup.
+- Implemented redirection to the post list screen using React Router after signup completion.
 
-Fields for email, password (with confirmation), and optional details such as name and profile picture were incorporated.
-React's state management and validation libraries were employed for field validation and email format verification.
-A checkbox for accepting terms and conditions was included.
-Clear error messages and success notifications were provided.
-A welcome email was simulated upon successful signup.
-Redirection to the post list screen was implemented using React Router after signup completion.
 Post List Screen Development:
+- Developed a scrolling post list screen that fetches data via a GET API.
+- Ensured responsiveness and visual consistency with the "MelodyVerse" theme by utilizing Tailwind CSS.
 
-A scrolling post list screen was developed that fetches data via a GET API.
-Responsiveness and visual consistency with the "MelodyVerse" theme were ensured by utilizing Tailwind CSS.
 API Endpoint Implementation:
+- Developed a '/signup' endpoint to handle user registration, ensuring data uniqueness and secure password hashing. Returned a JWT token upon successful registration.
+- Created a '/posts' endpoint for retrieving paginated post data from the database, with authentication checks.
 
-A '/signup' endpoint was developed to handle user registration, ensuring data uniqueness and secure password hashing. A JWT token was returned upon successful registration.
-A '/posts' endpoint was created for retrieving paginated post data from the database, with authentication checks.
 JWT Implementation:
+- Generated JWT tokens containing appropriate payload and expiration upon successful login.
+- Implemented token validation in protected routes to authenticate users.
 
-JWT tokens containing appropriate payload and expiration were generated upon successful login.
-Token validation was implemented in protected routes to authenticate users.
 Best Practices Followed:
+- Utilized bcrypt for secure password hashing.
+- Implemented comprehensive error handling to provide clear feedback.
+- Wrote well-structured and documented code throughout the project.
+- Utilized environment variables to protect sensitive information.
+- Ensured effective session management and token expiration handling.
 
-Bcrypt was utilized for secure password hashing.
-Comprehensive error handling was implemented to provide clear feedback.
-Code was well-structured and documented throughout the project.
-Environment variables were utilized to protect sensitive information.
-Effective session management and token expiration handling were ensured.
 Bonus Points Achieved:
-
-Password reset functionality was successfully implemented.
-Email verification for user signups was integrated.
-Rate limiting was added to protect against brute force attacks.
-Middleware was utilized for authentication and authorization purposes.
-Social login options and password visibility toggle were implemented using mock APIs and React libraries.
+- Successfully implemented password reset functionality.
+- Integrated email verification for user signups.
+- Added rate limiting to protect against brute force attacks.
+- Utilized middleware for authentication and authorization purposes.
+- Implemented social login options and password visibility toggle using mock APIs and React libraries.
