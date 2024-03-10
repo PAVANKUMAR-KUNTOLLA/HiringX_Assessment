@@ -6,6 +6,8 @@ screenshots:
 ![image](https://github.com/PAVANKUMAR-KUNTOLLA/HiringX_Assessment/assets/109667063/bc8e3340-c0c3-4997-8431-27a5e0acd64a)
 
 ![image](https://github.com/PAVANKUMAR-KUNTOLLA/HiringX_Assessment/assets/109667063/53429c74-78f7-4ce3-9395-0b8db006332d)
+![image](https://github.com/PAVANKUMAR-KUNTOLLA/HiringX_Assessment/assets/109667063/81c1a548-86ba-4249-a3c5-cfec353fecc9)
+
 
 Project Setup:
 
