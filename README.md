@@ -1,4 +1,4 @@
-![image](https://github.com/PAVANKUMAR-KUNTOLLA/HiringX_Assessment/assets/109667063/93f64e2e-4d89-4259-ba5d-845d241d9705)screenshots:
+screenshots:
 
 
 ![Screenshot 2024-03-11 001437](https://github.com/PAVANKUMAR-KUNTOLLA/HiringX_Assessment/assets/109667063/f259d09c-0848-4728-b990-20e1a425e8f6)
