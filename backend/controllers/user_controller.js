@@ -327,6 +327,7 @@ const resetPassword = async (req, res, next) => {
 
 const authenticateToken = async (req, res, next) => {
   const authHeader = req.headers["authorization"];
+  const baseUrl = req.protocol + '://' + req.get('host');
 
   const token = authHeader && authHeader.split(" ")[1];
   if (token == null) {
@@ -381,6 +382,7 @@ const authenticateViaGoogleOAuth = async (token) => {
 
 const getUserProfile = async (req, res, next) => {
   const authHeader = req.headers["authorization"];
+  const baseUrl = req.protocol + '://' + req.get('host');
 
   const token = authHeader && authHeader.split(" ")[1];
   if (!token) {
@@ -391,38 +393,38 @@ const getUserProfile = async (req, res, next) => {
 
   try {
     let user;
+    let googleUser;
+
     // First, attempt Google OAuth authentication
-    const googleUser = await authenticateViaGoogleOAuth(token);
-    if (googleUser) {
-      user = googleUser;
-    } else {
-      // If Google authentication fails, try JWT verification
+    googleUser = await authenticateViaGoogleOAuth(token);
+    if (!googleUser) {
       const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+
+      // Extract user details from the decoded token
       const userId = decodedToken.userId;
+
+      // Fetch user details from the database using the userId
       user = await User.findById(userId);
       if (!user) {
         return res.status(404).json({ message: "User not found." });
       }
-    }
 
-    // Append base URL to the profile picture path only for non-Google users
-    const userProfile = {
-      ...user,
-      // If it's a Google user, change the property name from 'picture' to 'profilePicture'
-      profilePicture: user.picture, // Assuming 'picture' is the correct property for Google profile picture
-    };
-
-    if (!googleUser) {
-      userProfile.profilePicture = baseUrl + '/' + userProfile.profilePicture;
+      // Append base URL to the profile picture path
+      user.profilePicture = baseUrl + '/' + user.profilePicture;
+    } else {
+      user = googleUser;
+      user.profilePicture = googleUser.picture; // Assuming 'picture' is the correct property for Google profile picture
     }
 
     // Send user details in the response
-    return res.status(200).json({ userProfile });
+    return res.status(200).json({ userProfile: user });
   } catch (error) {
     console.error("Error authenticating user:", error);
     return res.status(401).json({ message: "Unauthorized" });
   }
 };
+
+
 
 
 
