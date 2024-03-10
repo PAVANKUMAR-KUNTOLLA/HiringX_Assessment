@@ -4,11 +4,13 @@ Frontend Setup:
 - Navigated to the 'frontend' directory.
 - Installed dependencies using 'npm install'.
 - Started the frontend server via 'npm run start'.
+-  Run in Port 3000
 
 Backend Setup:
 - Navigated to the 'backend' directory.
 - Installed necessary packages with 'npm install'.
 - Launched the backend server with 'npm run start'.
+- Run in port 8080
 
 Technology Stack Utilized:
 - Leveraged Node.js and npm.
